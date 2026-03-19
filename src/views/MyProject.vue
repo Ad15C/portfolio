@@ -30,36 +30,59 @@ const project = ref()
 
 //Détails pour les différents projets
 const projects = ref([
-  {
-    id: 1,
-    src: 'public/cv.png',
-    title: 'CV',
-    date: 'Décembre 2023',
-    description: 'Réalisation Curriculum Vitae',
-    technologies: 'HTML, CSS, GitHub, VSCode',
-    downloadLink: 'https://github.com/Ad15C/Mon_cv.git'
+    {
+    id: 7,
+    src: '/Images_projets/Au_petit_village_homepage.png',
+    title: 'Dynamiser un site web avec Angular',
+    date: 'Octobre 2024',
+    description: 'Réalisation d\'un site web avec Angular pour l\'entreprise Au Petit Village',
+    technologies: 'Angular, TypeScript, HTML, CSS, Node.js, AngularCLI, RxJS, Express.js',
+    githubLink: 'https://github.com/Ad15C/Au_Petit_Village.git'
   },
 
   {
-    id: 2,
-    src: 'public/cahier_des_charges.png',
-    title: 'Cahier des Charges',
-    date: 'Décembre 2023',
-    description:
-      'Rédaction Cahier des Charges, pour La Socketterie, souhaitant effectuer une refonte de son site internet et un bilan de la concurrence',
-    technologies: 'Word',
-    downloadLink: 'public/cahier_des_charges.pdf'
+    id: 8,
+    src: '/Images_projets/trouve_ton_artisan_homepage.png',
+    title: 'Site Trouve ton Artisan',
+    date: 'Novembre 2024',
+    description: 'Réalisation du site web Trouve ton Artisan avec Angular.js',
+    technologies: 'Angular.js, HTML, CSS, JavaScript, Node.js, NPM, Always Data, EmailJS, Figma',
+    pdfLink: '/PDF/Plateforme_Trouve_Ton_Artisan.pdf',
+    githubLink: 'https://github.com/Ad15C/Artisan.git'
+  },
+  
+  {
+    id: 10,
+    src: '/Images_projets/mediatheque_staff_dashboard.png',
+    title: 'Moderniser le système de gestion interne d\'une médiathèque',
+    date: 'Juin 2025',
+    description: 'Réalisation d\'une mise à jour du système de gestion interne d\'une médiathèque avec Python et Django',
+    technologies: 'HTML, CSS, Python, Django, SQLite, Pytest',
+    pdfLink: '/PDF/Projet_mediatheque.pdf',
+    githubLink: 'https://github.com/Ad15C/django.git'
   },
 
   {
-    id: 3,
-    src: 'public/commentaire_dynamique_img.png',
-    title: 'Commentaire Dynamique',
-    date: 'Février 2024',
-    description: 'Réalisation de Commentaire Dynamique ',
-    technologies: 'HTML, CSS, GitHub, VSCode, JavaScript',
-    downloadLink: 'https://github.com/Ad15C/mon_commentaire.git'
-  }
+    id: 11,
+    src: '/Images_projets/Stubborn_sweatshirts_homepage.png',
+    title: 'Réalisation d\'un site e-commerce Stubborn Sweatshirts',
+    date: 'Février 2026',
+    description: 'Réalisation d\'un site e-commerce pour la marque Stubborn Sweatshirts avec Symfony',
+    technologies: 'HTML, CSS, JavaScript, Twig, Symfony 6, PHP, Doctrine ORM, Stripe, SwiftMailer, PHPUnit',
+    pdfLink: '/PDF/Dossier_stubborn.pdf',
+    githubLink: 'https://github.com/Ad15C/stubborn.git'
+  },
+
+  {
+    id: 12,
+    src: '/Images_projets/Knowledge_learning_homepage.png',
+    title: 'Création d\'une plateforme d\'apprentissage en ligne',
+    date: 'Mars 2026',
+    description: 'Réalisation d\'une plateforme d\'apprentissage en ligne Knowledge Learning',
+    technologies: 'HTML, CSS, Twig, Symfony AssetMapper, PHP, Symfony 8, Doctrine ORM, Doctrine Migrations, MySQL, PHPUnit, Symfony BrowserKit, Liip Test Fixtures, Dompdf',
+    pdfLink: '/PDF/Dossier_Knowledge_Learning.pdf',
+    githubLink: 'https://github.com/Ad15C/Knowledge_learning.git'
+  },
 ])
 
 //Sélection du Projet

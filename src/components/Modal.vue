@@ -9,15 +9,34 @@
 
       <!--Détail du modal-->
       <div class="modal_body">
-        <img :src="project.src" alt="Project Image" id="modalProject" />
+        <img :src="project.src" :alt="project.title" id="modalProject" />
         <h4 id="projectName">{{ project.title }} - ( {{ project.date }} )</h4>
-        <h5>{{ project.description }}</h5>
-        <h6>Technologies utilisées : {{ project.technologies }}</h6>
+        <p class="modal-description">{{ project.description }}</p>
+        <p class="modal-technologies">Technologies utilisées : {{ project.technologies }}</p>
       </div>
 
       <div class="modal_footer">
-        <!--Bouton de téléchargement du projet dans le modal-->
-        <button id="downloadButton" @click="handleDownload">Télécharger</button>
+        <!--Bouton pour télécharger le PDF duprojet-->
+        <a
+          v-if="project.pdfLink"
+          :href="project.pdfLink"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="modal-button"
+        >
+          Voir le PDF
+        </a>
+
+        <!--Bouton pour télécharger le projet sur GitHub-->
+        <a
+          v-if="project.githubLink"
+          :href="project.githubLink"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="modal-button"
+        >
+          Voir GitHub
+        </a>
       </div>
     </div>
   </div>
@@ -46,14 +65,6 @@ function close() {
   emit('close')
 }
 
-//Gestionnaire d'événement pour télécharger le projet
-const handleDownload = () => {
-  if (props.project.downloadLink) {
-    window.open(props.project.downloadLink, '_blank')
-  } else {
-    alert('Lien de téléchargement introuvable pour ce projet')
-  }
-}
 </script>
 
 <style scoped>
