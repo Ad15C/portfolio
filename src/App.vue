@@ -1,5 +1,5 @@
 <template>
-  <div id="App">
+  <div id="top">
     <!--Importation des Pages-->
     <MyHeader />
 
@@ -20,4 +20,5 @@ import Menu from './components/Menu.vue'
 import MyFooter from './components/MyFooter.vue'
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

@@ -1,13 +1,12 @@
 <template>
-  <!--Modal-->
-  <div v-if="isOpenModal" class="modal">
+  <div v-if="isOpenModal && project" class="modal" role="dialog" aria-modal="true">
     <div class="modal-content">
       <div class="modal_header">
-        <!--Croix pour fermer le modal-->
-        <span class="close" @click="close">&times;</span>
+        <button type="button" class="close" @click="close" aria-label="Fermer la fenêtre">
+          &times;
+        </button>
       </div>
 
-      <!--Détail du modal-->
       <div class="modal_body">
         <img :src="project.src" :alt="project.title" id="modalProject" />
         <h4 id="projectName">{{ project.title }} - ( {{ project.date }} )</h4>
@@ -16,7 +15,6 @@
       </div>
 
       <div class="modal_footer">
-        <!--Bouton pour télécharger le PDF duprojet-->
         <a
           v-if="project.pdfLink"
           :href="project.pdfLink"
@@ -27,7 +25,6 @@
           Voir le PDF
         </a>
 
-        <!--Bouton pour télécharger le projet sur GitHub-->
         <a
           v-if="project.githubLink"
           :href="project.githubLink"
@@ -43,28 +40,22 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue'
-
-const props = defineProps({
+defineProps({
   isOpenModal: {
     type: Boolean,
     required: true
   },
-
   project: {
     type: Object,
     required: true
   }
 })
 
-//Emit permet à un composant de spécifier quels événements il émet ainsi que les arguments qu'il prend
 const emit = defineEmits(['close'])
 
-//Fermeture du Modal
 function close() {
   emit('close')
 }
-
 </script>
 
 <style scoped>

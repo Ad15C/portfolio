@@ -1,6 +1,10 @@
 @import './base.css';
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -14,19 +18,54 @@ header {
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 100%;
   padding-top: 40px;
   padding-bottom: 40px;
   margin: 0;
+  text-align: center;
 }
 
-h1 {
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+header h1 {
   margin-top: 20px;
+  margin-bottom: 10px;
   font-size: 40px;
   font-weight: bold;
   text-align: center;
+  width: auto;
+  max-width: 100%;
+  padding: 0;
+}
+
+header p {
+  width: auto;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.subtitle {
+  max-width: 100%;
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.intro {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .logo {
@@ -34,6 +73,28 @@ h1 {
   height: 175px;
   display: block;
   object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Titres généraux */
+h2 {
+  max-width: 1216px;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  max-width: 1216px;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: x-large;
+  text-decoration: underline;
+  font-style: italic;
+  margin-bottom: 10px;
 }
 
 /* Barre de navigation */
@@ -87,15 +148,7 @@ p {
   font-size: large;
   padding-left: 20px;
   padding-right: 20px;
-}
-
-h3 {
-  max-width: 1216px;
-  width: 100%;
-  padding-left: 10px;
-  font-size: x-large;
-  text-decoration: underline;
-  font-style: italic;
+  line-height: 1.6;
 }
 
 figcaption {
@@ -106,34 +159,61 @@ figcaption {
   align-items: center;
 }
 
+/* Contact */
+.contact-section {
+  width: 100%;
+}
+
+.contact-intro {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 20px;
+}
+
 /* Projets */
 .mes_projets {
+  width: 100%;
+  max-width: 1216px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  gap: 60px;
+  align-items: flex-start;
+  gap: 50px;
+  margin: 0 auto;
 }
 
 .project {
-  margin: 10px;
+  width: 220px;
+  flex: 0 0 220px;
+  margin: 0;
   text-align: center;
-  flex: 1 1 200px;
-  max-width: 200px;
+}
+
+.project figure {
+  margin: 0;
 }
 
 .project-image {
-  width: 200px;
+  width: 220px;
   height: auto;
+  display: block;
   cursor: pointer;
+  border-radius: 4px;
   transition:
-    transform 0.3s,
-    box-shadow 0.3s;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
+/* Effets au survol des projets */
+.project:hover .project-image,
 .project-image:hover {
   transform: scale(1.05);
   box-shadow: 12px 10px 0 2px #aaaaaaad;
+}
+
+.project:hover figcaption {
+  font-weight: 600;
 }
 
 /* Modal */
@@ -169,6 +249,10 @@ figcaption {
   font-size: 30px;
   cursor: pointer;
   line-height: 1;
+  background: none;
+  border: none;
+  color: #333;
+  padding: 0;
 }
 
 .modal_body {
@@ -224,7 +308,7 @@ figcaption {
   text-decoration: none;
   padding: 12px 24px;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .modal-button:hover {
@@ -242,7 +326,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 15px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -314,21 +398,34 @@ footer {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 80px;
+  width: 60px;
   height: 60px;
-  cursor: pointer;
-  display: flex;
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#goBackUp a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 #goBackUp img {
   width: 30px;
   height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 #goBackUp:hover img {
-  transform: scale(1.1);
-  transition: transform 0.2s;
+  transform: scale(1.15);
 }
 
 .Networks {
@@ -345,8 +442,22 @@ footer {
   height: 25px;
 }
 
+.Networks a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  border-radius: 4px;
+}
+
 .Networks a:hover {
   background-color: #ddd;
+}
+
+.MaJ p {
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* Page 404 */
@@ -367,8 +478,24 @@ footer {
     padding: 1rem;
   }
 
-  h1 {
+  header h1 {
     font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .intro {
+    font-size: 17px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 22px;
   }
 
   .logo {
@@ -391,11 +518,12 @@ footer {
   }
 
   .project {
-    max-width: 100%;
+    width: 190px;
+    flex: 0 0 190px;
   }
 
   .project-image {
-    width: 180px;
+    width: 190px;
   }
 
   .modal-content {
@@ -407,8 +535,7 @@ footer {
     font-size: 20px;
   }
 
-  button,
-  #downloadButton {
+  button {
     width: auto;
     max-width: 100%;
   }
@@ -416,11 +543,39 @@ footer {
   footer {
     min-height: 120px;
   }
+
+  #goBackUp {
+    width: 55px;
+    height: 55px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  #goBackUp img {
+    width: 26px;
+    height: 26px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-  h1 {
+  header h1 {
     font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .intro {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 20px;
   }
 
   ul {
@@ -430,6 +585,11 @@ footer {
 
   li a {
     padding: 12px;
+  }
+
+  .project {
+    width: 160px;
+    flex: 0 0 160px;
   }
 
   .project-image {
@@ -444,5 +604,17 @@ footer {
   .modal-technologies,
   p {
     font-size: 16px;
+  }
+
+  #goBackUp {
+    width: 50px;
+    height: 50px;
+    bottom: 12px;
+    right: 12px;
+  }
+
+  #goBackUp img {
+    width: 24px;
+    height: 24px;
   }
 }

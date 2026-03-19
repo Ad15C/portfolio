@@ -1,21 +1,21 @@
 <template>
-  <div id="errorpage">
-    <h1>404 - Error</h1>
+  <section id="errorpage">
+    <h1>404 - Erreur</h1>
     <p>
-      La page que vous recherchez n'est pas disponible pour le moment... <br>
-      Veuillez rééssayez plus tard.
+      La page que vous recherchez n’existe pas ou n’est plus disponible.
     </p>
+
     <p>
-      <RouterLink to="/">Accueil</RouterLink>
+      <RouterLink to="/">Retour à l’accueil</RouterLink>
     </p>
-    <br />
+
     <img
       src="../assets/favicon/not_found.jpg"
-      title="Page Not Found"
+      alt="Illustration page non trouvée"
       width="300"
       height="300"
-    /><br />
-  </div>
+    />
+  </section>
 </template>
 
 <script setup></script>
