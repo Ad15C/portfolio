@@ -1,6 +1,6 @@
 <template>
   <!--Barre de navigation-->
-  <nav class="menu">
+  <nav class="menu" aria-label="Navigation principale">
     <ul class="nav_links">
       <li>
         <RouterLink to="/" class="nav_link">Accueil</RouterLink>

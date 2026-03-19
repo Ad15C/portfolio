@@ -1,9 +1,9 @@
 <template>
   <section id="Projets">
-    <h3>Ci-dessous, vous trouverez les projets réalisés dernièrement:</h3>
+    <h3>Projets réalisés</h3>
     <br />
     <div class="mes_projets">
-      <div v-for="(project, index) in projects" :key="index" class="project">
+      <div v-for="project in projects" :key="project.id" class="project">
         <figure>
           <img
             :src="project.src"
@@ -17,107 +17,170 @@
           </figcaption>
         </figure>
       </div>
-      <Modal :is-open-modal="isModalOpen" :project="selectedProject" @close="closeModal" />
+
+      <Modal
+        v-if="selectedProject"
+        :isOpenModal="isModalOpen"
+        :project="selectedProject"
+        @close="closeModal"
+      />
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import Modal from '@/components/Modal.vue'
 
-const project = ref()
-
-//Détails pour les différents projets
 const projects = ref([
-    {
+  {
+    id: 1,
+    src: '/Images_projets/cv.png',
+    title: 'CV en ligne',
+    date: 'Décembre 2023',
+    description: "Réalisation d’un curriculum vitae",
+    technologies: 'HTML, CSS, GitHub, VS Code',
+    githubLink: 'https://github.com/Ad15C/Mon_cv.git'
+  },
+  {
+    id: 2,
+    src: '/Images_projets/cahier_des_charges.png',
+    title: 'Cahier des charges – La Socketterie',
+    date: 'Décembre 2023',
+    description: "Rédaction d’un cahier des charges pour La Socketterie dans le cadre d’une refonte du site internet et d’une analyse concurrentielle",
+    technologies: 'Word',
+    pdfLink: '/PDF/Cahier_des_charges.pdf'
+  },
+  {
+    id: 3,
+    src: '/Images_projets/commentaire_dynamique.png',
+    title: 'Système de commentaires dynamiques',
+    date: 'Février 2024',
+    description: "Développement d’un système de commentaires dynamiques en JavaScript",
+    technologies: 'HTML, CSS, GitHub, VS Code, JavaScript',
+    githubLink: 'https://github.com/Ad15C/mon_commentaire.git'
+  },
+  {
+    id: 4,
+    src: '/Images_projets/prototype_desktop_probeats.png',
+    title: 'Maquette UI – Probeats',
+    date: 'Juillet 2024',
+    description: "Conception d’une maquette d’interface utilisateur avec Figma",
+    technologies: 'Figma',
+    githubLink: 'https://github.com/Ad15C/Figma.git'
+  },
+  {
+    id: 5,
+    src: '/Images_projets/cv_react_homepage.jpg',
+    title: 'CV en ligne avec React',
+    date: 'Août 2024',
+    description: "Réalisation d'un CV en ligne avec React.js",
+    technologies: 'React.js, HTML, CSS, Sass, Bootstrap, JavaScript, Vite, GitHub, VS Code',
+    githubLink: 'https://github.com/Ad15C/mon_cv_react.git'
+  },
+  {
+    id: 6,
+    src: '/Images_projets/site_wordpress_homepage.png',
+    title: 'Site vitrine WordPress – La Vie des Plantes',
+    date: 'Août 2024',
+    description: "Création d’un site web avec WordPress pour l’entreprise La Vie des Plantes",
+    technologies: 'WordPress, HTML, CSS, JavaScript, Elementor,Yoast SEO, Always Data, GitHub, VS Code',
+    githubLink: 'https://github.com/Ad15C/La-Vie-Des-Plantes.git'
+  },
+  {
     id: 7,
     src: '/Images_projets/Au_petit_village_homepage.png',
-    title: 'Dynamiser un site web avec Angular',
+    title: 'Site web dynamique – Au Petit Village',
     date: 'Octobre 2024',
-    description: 'Réalisation d\'un site web avec Angular pour l\'entreprise Au Petit Village',
-    technologies: 'Angular, TypeScript, HTML, CSS, Node.js, AngularCLI, RxJS, Express.js',
+    description: "Réalisation d'un site web avec Angular pour l’entreprise Au Petit Village",
+    technologies: 'Angular, TypeScript, HTML, CSS, Node.js, Angular CLI, RxJS, Express.js, MongoDB, Mongoose, GitHub, VS Code',
     githubLink: 'https://github.com/Ad15C/Au_Petit_Village.git'
   },
-
   {
     id: 8,
     src: '/Images_projets/trouve_ton_artisan_homepage.png',
-    title: 'Site Trouve ton Artisan',
+    title: 'Plateforme web – Trouve ton Artisan',
     date: 'Novembre 2024',
-    description: 'Réalisation du site web Trouve ton Artisan avec Angular.js',
-    technologies: 'Angular.js, HTML, CSS, JavaScript, Node.js, NPM, Always Data, EmailJS, Figma',
+    description: 'Réalisation du site web Trouve ton Artisan avec Angular',
+    technologies: 'Angular, HTML, CSS, JavaScript, Node.js, NPM, Always Data, EmailJS, Figma, GitHub, VS Code',
     pdfLink: '/PDF/Plateforme_Trouve_Ton_Artisan.pdf',
     githubLink: 'https://github.com/Ad15C/Artisan.git'
   },
-  
+  {
+    id: 9,
+    src: '/Images_projets/Tifosi.png',
+    title: 'Base de données – Tifosi',
+    date: 'Janvier 2025',
+    description: "Réalisation d’une base de données pour le site Tifosi avec MySQL",
+    technologies: 'MySQL, MySQL Workbench, GitHub, VS Code',
+    githubLink: 'https://github.com/Ad15C/tifosi.git'
+  },
   {
     id: 10,
     src: '/Images_projets/mediatheque_staff_dashboard.png',
-    title: 'Moderniser le système de gestion interne d\'une médiathèque',
+    title: 'Application de gestion – Médiathèque',
     date: 'Juin 2025',
-    description: 'Réalisation d\'une mise à jour du système de gestion interne d\'une médiathèque avec Python et Django',
-    technologies: 'HTML, CSS, Python, Django, SQLite, Pytest',
+    description: "Réalisation d’une mise à jour du système de gestion interne d’une médiathèque avec Python et Django",
+    technologies: 'HTML, CSS, Python, Django, SQLite, Pytest, GitHub, VS Code',
     pdfLink: '/PDF/Projet_mediatheque.pdf',
     githubLink: 'https://github.com/Ad15C/django.git'
   },
-
   {
     id: 11,
     src: '/Images_projets/Stubborn_sweatshirts_homepage.png',
-    title: 'Réalisation d\'un site e-commerce Stubborn Sweatshirts',
+    title: 'Site e-commerce – Stubborn Sweatshirts',
     date: 'Février 2026',
-    description: 'Réalisation d\'un site e-commerce pour la marque Stubborn Sweatshirts avec Symfony',
-    technologies: 'HTML, CSS, JavaScript, Twig, Symfony 6, PHP, Doctrine ORM, Stripe, SwiftMailer, PHPUnit',
+    description: "Réalisation d’un site e-commerce pour la marque Stubborn Sweatshirts avec Symfony",
+    technologies: 'HTML, CSS, JavaScript, Twig, Symfony 6, PHP, Doctrine ORM, Stripe, SwiftMailer, PHPUnit, GitHub, VS Code',
     pdfLink: '/PDF/Dossier_stubborn.pdf',
     githubLink: 'https://github.com/Ad15C/stubborn.git'
   },
-
   {
     id: 12,
     src: '/Images_projets/Knowledge_learning_homepage.png',
-    title: 'Création d\'une plateforme d\'apprentissage en ligne',
+    title: 'Plateforme e-learning – Knowledge Learning',
     date: 'Mars 2026',
-    description: 'Réalisation d\'une plateforme d\'apprentissage en ligne Knowledge Learning',
-    technologies: 'HTML, CSS, Twig, Symfony AssetMapper, PHP, Symfony 8, Doctrine ORM, Doctrine Migrations, MySQL, PHPUnit, Symfony BrowserKit, Liip Test Fixtures, Dompdf',
+    description: "Réalisation d’une plateforme d’apprentissage en ligne Knowledge Learning",
+    technologies: 'HTML, CSS, Twig, Symfony AssetMapper, PHP, Symfony 8, Doctrine ORM, Doctrine Migrations, MySQL, PHPUnit, Symfony BrowserKit, Liip Test Fixtures, Dompdf, GitHub, VS Code',
     pdfLink: '/PDF/Dossier_Knowledge_Learning.pdf',
     githubLink: 'https://github.com/Ad15C/Knowledge_learning.git'
-  },
+  }
 ])
 
-//Sélection du Projet
-//la valeur nulle est utilisée pour l'état initial où le modal n'est pas affiché
-let selectedProject = ref(null)
+const selectedProject = ref(null)
+const isModalOpen = ref(false)
 
-let isModalOpen = ref(false)
-
-//Ouverture du Modal
 const openModal = (project) => {
-  selectedProject.value = project,
-  isModalOpen = true
+  selectedProject.value = project
+  isModalOpen.value = true
 }
 
-//Fermeture du Modal
 const closeModal = () => {
-  selectedProject.value = project,
-  isModalOpen = false
+  selectedProject.value = null
+  isModalOpen.value = false
 }
 
-//Fermeture en cliquant en dehors du modal
 const clickOutside = (event) => {
-  if (isModalOpen && event.target.closest('.modal')) {
+  if (isModalOpen.value && event.target.classList.contains('modal')) {
     closeModal()
   }
 }
-document.addEventListener('click', clickOutside)
 
-//Fermeture en appuyant sur Escape
 const handleEscape = (event) => {
-  if (isModalOpen && event.key) {
+  if (isModalOpen.value && event.key === 'Escape') {
     closeModal()
   }
 }
-document.addEventListener('keydown', handleEscape)
+
+onMounted(() => {
+  document.addEventListener('click', clickOutside)
+  document.addEventListener('keydown', handleEscape)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('click', clickOutside)
+  document.removeEventListener('keydown', handleEscape)
+})
 </script>
 
 <style scoped>

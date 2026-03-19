@@ -1,32 +1,36 @@
 <template>
   <footer>
-    <!--Fléche pour remonter en haut de la page-->
+    <!-- Flèche retour haut -->
     <div id="goBackUp">
-      <!--Uitilisation du href pour que ça remonte en haut de la page automatiquement-->
-      <a href="#">
-        <img src="../assets/favicon/fleche.png" alt="Remonter en Haut" />
+      <a href="#top" aria-label="Remonter en haut">
+        <img src="../assets/favicon/fleche.png" alt="Remonter en haut" />
       </a>
     </div>
 
-    <!--Logos pour les réseaux professionnels-->
+    <!-- Réseaux -->
     <div class="Networks">
-      <a href="http://www.linkedin.com/in/adelinecanon" target="_blank">
-        <img src="../assets/logos/logo_linkedin.png" alt="Profil_LinkedIn" />
+      <a
+        href="https://www.linkedin.com/in/adelinecanon"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="../assets/logos/logo_linkedin.png" alt="LinkedIn" />
       </a>
 
-      <a href="https://github.com/Ad15C" target="_blank">
-        <img src="../assets/logos/signe-github.png" alt="Profil_GitHub" />
+      <a
+        href="https://github.com/Ad15C"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="../assets/logos/signe-github.png" alt="GitHub" />
       </a>
     </div>
 
-    <!--Date Dernière MàJ-->
+    <!-- Copyright -->
     <div class="MaJ">
-      <h5>Dernière mise à jour le <time datetime="2026-03-19">19 Mars 2026</time></h5>
+      <p>
+        © {{ new Date().getFullYear() }} Adeline Canon — Tous droits réservés
+      </p>
     </div>
   </footer>
 </template>
-
-<script setup></script>
-
-<style scoped>
-</style>
