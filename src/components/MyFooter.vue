@@ -21,7 +21,7 @@
 
     <!--Date Dernière MàJ-->
     <div class="MaJ">
-      <h5>Dernière mise à jour le <time datetime="2024-06-18">18 Juin 2024</time></h5>
+      <h5>Dernière mise à jour le <time datetime="2026-03-19">19 Mars 2026</time></h5>
     </div>
   </footer>
 </template>
