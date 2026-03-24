@@ -1,7 +1,7 @@
 <template>
-  <section id="Projets">
-    <h3>Projets réalisés</h3>
-    <br />
+  <section id="Projets" class="projects-section">
+    <h3 class="projects-title">Projets réalisés</h3>
+
     <div class="mes_projets">
       <div v-for="project in projects" :key="project.id" class="project">
         <figure>
@@ -184,4 +184,15 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+.projects-title {
+  margin-bottom: 32px;
+}
+
+.project-image {
+  transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.05);
+}
 </style>

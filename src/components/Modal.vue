@@ -11,7 +11,10 @@
         <img :src="project.src" :alt="project.title" id="modalProject" />
         <h4 id="projectName">{{ project.title }} - ( {{ project.date }} )</h4>
         <p class="modal-description">{{ project.description }}</p>
-        <p class="modal-technologies">Technologies utilisées : {{ project.technologies }}</p>
+        <p class="modal-technologies">
+          <span class="underline">Technologies utilisées :</span>&nbsp;
+          {{ project.technologies }}
+        </p>
       </div>
 
       <div class="modal_footer">
@@ -59,4 +62,24 @@ function close() {
 </script>
 
 <style scoped>
+.underline {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.close {
+  font-size: 30px;
+  cursor: pointer;
+  line-height: 1;
+  background: none;
+  border: none;
+  color: #333;
+  padding: 0;
+}
+
+.close:hover {
+  background: none;
+  color: #172432;
+  transform: scale(1.1);
+}
 </style>
