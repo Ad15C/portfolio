@@ -40,7 +40,7 @@ const projects = ref([
     date: 'Décembre 2023',
     description: "Réalisation d’un curriculum vitae",
     technologies: 'HTML, CSS, GitHub, VS Code',
-    githubLink: 'https://github.com/Ad15C/Mon_cv.git'
+    githubLink: 'https://github.com/Ad15C/cv-html-css.git'
   },
   {
     id: 2,
@@ -58,7 +58,7 @@ const projects = ref([
     date: 'Février 2024',
     description: "Développement d’un système de commentaires dynamiques en JavaScript",
     technologies: 'HTML, CSS, GitHub, VS Code, JavaScript',
-    githubLink: 'https://github.com/Ad15C/mon_commentaire.git'
+    githubLink: 'https://github.com/Ad15C/dynamic-comments.git'
   },
   {
     id: 4,
@@ -67,7 +67,7 @@ const projects = ref([
     date: 'Juillet 2024',
     description: "Conception d’une maquette d’interface utilisateur avec Figma",
     technologies: 'Figma',
-    githubLink: 'https://github.com/Ad15C/Figma.git'
+    githubLink: 'https://github.com/Ad15C/probeats-ui-mockup.git'
   },
   {
     id: 5,
@@ -76,7 +76,7 @@ const projects = ref([
     date: 'Août 2024',
     description: "Réalisation d'un CV en ligne avec React.js",
     technologies: 'React.js, HTML, CSS, Sass, Bootstrap, JavaScript, Vite, GitHub, VS Code',
-    githubLink: 'https://github.com/Ad15C/mon_cv_react.git'
+    githubLink: 'https://github.com/Ad15C/cv-react.git'
   },
   {
     id: 6,
@@ -85,7 +85,7 @@ const projects = ref([
     date: 'Août 2024',
     description: "Création d’un site web avec WordPress pour l’entreprise La Vie des Plantes",
     technologies: 'WordPress, HTML, CSS, JavaScript, Elementor,Yoast SEO, Always Data, GitHub, VS Code',
-    githubLink: 'https://github.com/Ad15C/La-Vie-Des-Plantes.git'
+    githubLink: 'https://github.com/Ad15C/la-vie-des-plantes.git'
   },
   {
     id: 7,
@@ -94,7 +94,7 @@ const projects = ref([
     date: 'Octobre 2024',
     description: "Réalisation d'un site web avec Angular pour l’entreprise Au Petit Village",
     technologies: 'Angular, TypeScript, HTML, CSS, Node.js, Angular CLI, RxJS, Express.js, MongoDB, Mongoose, GitHub, VS Code',
-    githubLink: 'https://github.com/Ad15C/Au_Petit_Village.git'
+    githubLink: 'https://github.com/Ad15C/au-petit-village-angular.git'
   },
   {
     id: 8,
@@ -104,7 +104,7 @@ const projects = ref([
     description: 'Réalisation du site web Trouve ton Artisan avec Angular',
     technologies: 'Angular, HTML, CSS, JavaScript, Node.js, NPM, Always Data, EmailJS, Figma, GitHub, VS Code',
     pdfLink: '/PDF/Plateforme_Trouve_Ton_Artisan.pdf',
-    githubLink: 'https://github.com/Ad15C/Artisan.git'
+    githubLink: 'https://github.com/Ad15C/trouve-ton-artisan-angular.git'
   },
   {
     id: 9,
@@ -113,7 +113,7 @@ const projects = ref([
     date: 'Janvier 2025',
     description: "Réalisation d’une base de données pour le site Tifosi avec MySQL",
     technologies: 'MySQL, MySQL Workbench, GitHub, VS Code',
-    githubLink: 'https://github.com/Ad15C/tifosi.git'
+    githubLink: 'https://github.com/Ad15C/tifosi-mysql-database.git'
   },
   {
     id: 10,
@@ -123,7 +123,7 @@ const projects = ref([
     description: "Réalisation d’une mise à jour du système de gestion interne d’une médiathèque avec Python et Django",
     technologies: 'HTML, CSS, Python, Django, SQLite, Pytest, GitHub, VS Code',
     pdfLink: '/PDF/Projet_mediatheque.pdf',
-    githubLink: 'https://github.com/Ad15C/django.git'
+    githubLink: 'https://github.com/Ad15C/mediatheque-django.git'
   },
   {
     id: 11,
@@ -133,7 +133,7 @@ const projects = ref([
     description: "Réalisation d’un site e-commerce pour la marque Stubborn Sweatshirts avec Symfony",
     technologies: 'HTML, CSS, JavaScript, Twig, Symfony 6, PHP, Doctrine ORM, Stripe, SwiftMailer, PHPUnit, GitHub, VS Code',
     pdfLink: '/PDF/Dossier_stubborn.pdf',
-    githubLink: 'https://github.com/Ad15C/stubborn.git'
+    githubLink: 'https://github.com/Ad15C/stubborn-ecommerce-symfony.git'
   },
   {
     id: 12,
@@ -143,7 +143,7 @@ const projects = ref([
     description: "Réalisation d’une plateforme d’apprentissage en ligne Knowledge Learning",
     technologies: 'HTML, CSS, Twig, Symfony AssetMapper, PHP, Symfony 8, Doctrine ORM, Doctrine Migrations, MySQL, PHPUnit, Symfony BrowserKit, Liip Test Fixtures, Dompdf, GitHub, VS Code',
     pdfLink: '/PDF/Dossier_Knowledge_Learning.pdf',
-    githubLink: 'https://github.com/Ad15C/Knowledge_learning.git'
+    githubLink: 'https://github.com/Ad15C/knowledge-learning.git'
   }
 ])
 

@@ -97,7 +97,7 @@ const projects = ref([
     description: "Réalisation d’une mise à jour du système de gestion interne d’une médiathèque avec Python et Django",
     technologies: 'HTML, CSS, Python, Django, SQLite, Pytest, GitHub, VS Code',
     pdfLink: '/PDF/Projet_mediatheque.pdf',
-    githubLink: 'https://github.com/Ad15C/django.git'
+    githubLink: 'https://github.com/Ad15C/mediatheque-django.git'
   },
   {
     id: 11,
@@ -107,7 +107,7 @@ const projects = ref([
     description: "Réalisation d’un site e-commerce pour la marque Stubborn Sweatshirts avec Symfony",
     technologies: 'HTML, CSS, JavaScript, Twig, Symfony 6, PHP, Doctrine ORM, Stripe, SwiftMailer, PHPUnit, GitHub, VS Code',
     pdfLink: '/PDF/Dossier_stubborn.pdf',
-    githubLink: 'https://github.com/Ad15C/stubborn.git'
+    githubLink: 'https://github.com/Ad15C/stubborn-ecommerce-symfony.git'
   },
   {
     id: 12,
@@ -117,7 +117,7 @@ const projects = ref([
     description: "Réalisation d’une plateforme d’apprentissage en ligne Knowledge Learning",
     technologies: 'HTML, CSS, Twig, Symfony AssetMapper, PHP, Symfony 8, Doctrine ORM, Doctrine Migrations, MySQL, PHPUnit, Symfony BrowserKit, Liip Test Fixtures, Dompdf, GitHub, VS Code',
     pdfLink: '/PDF/Dossier_Knowledge_Learning.pdf',
-    githubLink: 'https://github.com/Ad15C/Knowledge_learning.git'
+    githubLink: 'https://github.com/Ad15C/knowledge-learning.git'
   }
 ])
 
