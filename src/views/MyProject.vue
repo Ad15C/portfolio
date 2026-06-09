@@ -69,7 +69,7 @@ const projects = ref([
     technologies: 'Figma',
     githubLink: 'https://github.com/Ad15C/probeats-ui-mockup.git'
   },
-  {
+  {np
     id: 5,
     src: '/Images_projets/cv_react_homepage.jpg',
     title: 'CV en ligne avec React',
